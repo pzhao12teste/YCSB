@@ -35,5 +35,4 @@ script:
 - echo TESTNUM $(find . -name TEST-*.xml -newer /tmp/NOW | wc -l)
 services:
 - mongodb
-- riak
 sudo: false
