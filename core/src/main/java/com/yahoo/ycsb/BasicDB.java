@@ -47,16 +47,16 @@ public class BasicDB extends DB {
   protected static Map<Integer, Integer> inserts;
   protected static Map<Integer, Integer> deletes;
   
-  protected boolean verbose;
-  protected boolean randomizedelay;
-  protected int todelay;
+  private boolean verbose;
+  private boolean randomizedelay;
+  private int todelay;
   protected boolean count;
 
   public BasicDB() {
     todelay = 0;
   }
 
-  protected void delay() {
+  private void delay() {
     if (todelay > 0) {
       long delayNs;
       if (randomizedelay) {
