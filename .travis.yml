@@ -1,7 +1,3 @@
-addons:
-  hostname: myshorthost
-  hosts:
-  - myshorthost
 before_cache:
 - rm -rf $HOME/CACHE; find $TRAVIS_BUILD_DIR -name .ekstazi | while read line; do
   du -sh $line;         DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line
@@ -39,4 +35,5 @@ script:
 - echo TESTNUM $(find . -name TEST-*.xml -newer /tmp/NOW | wc -l)
 services:
 - mongodb
-sudo: true
+- riak
+sudo: false
